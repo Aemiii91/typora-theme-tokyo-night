@@ -1,0 +1,69 @@
+:root {
+  --color-level: 4;
+
+  --bg-color:             #1a1b26;
+  --text-color:           #a9b1d6;
+  --color-black:          #363b54;
+  --color-red:            #bb616b;
+  --color-green:          #41a6b5;
+  --color-yellow:         #e0af68;
+  --color-blue:           #3d59a1;
+  --color-purple:         #9d7cd8;
+  --color-cyan:           #3c7da2;
+  --color-white:          #787c99;
+  --color-bright-black:   #42465d;
+  --color-bright-red:     #f7768e;
+  --color-bright-green:   #73daca;
+  --color-bright-yellow:  #9ece6a;
+  --color-bright-blue:    #7aa2f7;
+  --color-bright-purple:  #bb9af7;
+  --color-bright-cyan:    #7dcfff;
+  --color-bright-white:   #bec2da;
+
+  --font-family: Charter, Times, serif;
+  --monospace: "Fira Code", Consolas, "Lucida Console", "Courier", monospace;
+  --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  --side-margin: 3.5rem;
+  --scrollbar-width: 8px;
+
+  --color-brighten: 190, 194, 218;
+  --color-darken: 0, 0, 0;
+
+  --bg-color-darker: #16161e;
+
+  /* window variables */
+  --window-border-color: #0d0f17;
+
+  /* base variables */
+  /* --select-text-bg-color: #272b3c; */
+  --select-text-bg-color: rgba(var(--color-brighten), .1);
+  --select-text-font-color: auto;
+
+  /* base control variables */
+  --md-char-color: var(--color-white);
+  --meta-content-color: var(--color-bright-purple);
+  --blur-text-color: var(--color-black);
+  --drag-placeholder-color: rgba(var(--color-darken), .2);
+  --panel-border-color: var(--color-black);
+  --active-toggle-btn-color: var(--color-white);
+  --table-border-color: var(--color-black);
+  --primary-color: var(--color-bright-green);
+  --primary-btn-border-color: var(--color-green);
+  --primary-btn-text-color: var(--bg-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+  --search-select-text-color: var(--select-text-font-color);
+  --heading-char-color: var(--color-bright-black);
+  --control-text-color: var(--text-color);
+  --control-text-hover-color: var(--text-color);
+  --window-border: 1px solid var(--window-border-color);
+  --active-file-bg-color: var(--color-black);
+  --active-file-text-color: var(--color-bright-white);
+  --active-file-border-color: var(--primary-color);
+  --focus-ring-color: var(--color-white);
+  --side-bar-bg-color: var(--bg-color-darker);
+  --item-hover-bg-color: var(--color-black);
+  --item-hover-text-color: var(--color-bright-white);
+  --side-bar-menu-active-tint: var(--primary-color);
+  --rawblock-edit-panel-bd: var(--bg-color);
+}
