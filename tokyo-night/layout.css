@@ -1,0 +1,632 @@
+html {
+  font-size: 16px;
+}
+
+body, #write, .cm-s-typora-default {
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+content {
+  padding-left: calc(var(--scrollbar-width));
+}
+
+#write {
+  padding: 40px calc(var(--side-margin)) 70px;
+  margin: 0 auto;
+  max-width: calc(80ch + 2*(var(--side-margin)));
+}
+
+.md-fences {
+  background-color: transparent;
+}
+
+
+.md-comment {
+  color: var(--color-cyan);
+}
+
+
+#write a[href]:not([role="menuitem"]) {
+  color: var(--color-bright-blue);
+  text-decoration: underline transparent;
+  position: relative;
+  transition: text-decoration-color .2s;
+}
+
+#write a[href]:not([role="menuitem"]):hover {
+  text-decoration: underline var(--color-bright-blue);
+}
+
+strong {
+  color: var(--color-bright-white);
+}
+
+/* span[md-inline="strong"] .md-meta {
+  position: absolute;
+}
+span[md-inline="strong"] .md-meta:first-of-type {
+  margin-left: -1.5ch;
+}
+span[md-inline="strong"] .md-meta:last-of-type {
+  margin-right: -1.5ch;
+} */
+
+#write h1, body > h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  color: var(--color-bright-white);
+  position: relative;
+}
+
+/** initialize css counter */
+#write { counter-reset: h1; }
+h1 { counter-increment: h1; counter-reset: h2; }
+h2 { counter-increment: h2; counter-reset: h3; }
+h3 { counter-increment: h3; counter-reset: h4; }
+h4 { counter-increment: h4; counter-reset: h5; }
+h5 { counter-increment: h5; counter-reset: h6; }
+h6 { counter-increment: h6; }
+
+/** put counter result into headings */
+/* #write h1:before {
+    content: counter(h1) "\00a0\00a0";
+} */
+
+#write h2:before {
+    content: counter(h2) "\00a0\00a0";
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before /** override the default style for focused headings */ {
+    content: counter(h2) "." counter(h3) "\00a0\00a0";
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+    content: counter(h2) "." counter(h3) "." counter(h4) "\00a0\00a0";
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "\00a0\00a0";
+    display: none;
+}
+
+#write h6:before,
+h6.md-focus.md-heading:before {
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) "\00a0\00a0";
+    display: none;
+}
+
+/** override the default style for focused headings */
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    border: inherit;
+    border-radius: inherit;
+    position: initial;
+    float: none;
+    top:initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    display: initial !important;
+}
+
+#write h1:before,
+#write h2:before,
+#write h3:before,
+#write h4:before,
+#write h5:before,
+#write h6:before,
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before {
+  color: var(--color-bright-black);
+  position: absolute;
+  left: -8rem;
+  width: 8rem;
+  text-align: right;
+  font-size: .75em;
+  line-height: 2.13em;
+}
+
+li>h3.md-focus:first-child:before,
+li>h4.md-focus:first-child:before,
+li>h6.md-focus:first-child:before {
+  opacity: 1;
+}
+
+#write blockquote h1,
+#write blockquote h2,
+#write blockquote h3,
+#write blockquote h4,
+#write blockquote h5,
+#write blockquote h6 {
+  counter-increment: none;
+  counter-reset: none;
+}
+
+#write blockquote h1:before,
+#write blockquote h2:before,
+#write blockquote h3:before,
+#write blockquote h4:before,
+#write blockquote h5:before,
+#write blockquote h6:before {
+  content: "";
+}
+
+li > h1:first-child,
+li > h2:first-child,
+li > h3:first-child,
+li > h4:first-child,
+li > h5:first-child,
+li > h6:first-child {
+  margin-top: 1rem;
+}
+
+
+hr {
+  height: 2px;
+  background-color: var(--color-black);
+  border: 0px;
+}
+
+ul,
+ol {
+  padding-left: 30px;
+}
+
+blockquote {
+  padding: 4px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70ch;
+  zoom: .85;
+}
+
+blockquote blockquote {
+  padding-right: 0em;
+}
+
+table {
+  border-top: 2px solid var(--color-bright-black);
+  border-bottom: 2px solid var(--color-bright-black);
+}
+
+figure > table {
+  width: auto;
+  margin: 0 auto;
+}
+
+table thead {
+  border-bottom: 1px solid var(--color-bright-black);
+}
+
+table tbody tr {
+  margin: 0;
+  padding: 0;
+}
+
+table tbody tr:not(:first-of-type) {
+  border-top: 1px dashed var(--color-black);
+}
+
+table tr th,
+table tr td {
+  padding: 6px 13px;
+}
+
+.md-math-container, .md-mathjax-preview {
+  font-size: 1.35rem;
+}
+
+.md-inline-math {
+  font-size: 1.1rem;
+  line-height: 1rem;
+}
+
+.md-inline-math script {
+  color: var(--color-purple);
+}
+
+
+/* Table of Contents */
+
+.md-toc {
+  border-radius: 6px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  border: 0px;
+}
+
+/* toc content */
+.md-toc-content {
+  padding-top: 5px;
+  padding-bottom: 8px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+/* remove outline when toc is selected */
+.md-toc:focus .md-toc-content {
+  border: 0px;
+  margin: 0px;
+  outline: 1px solid var(--color-black);
+}
+
+/* toc item */
+.md-toc-item {
+  position: relative;
+}
+
+#write a.md-toc-inner {
+  border-color: transparent;
+  position: relative;
+  color: var(--text-color);
+  display: block;
+  line-height: 24px;
+}
+
+#write a.md-toc-inner:hover {
+  text-decoration: none;
+  background-color: rgba(var(--color-darken), .25);
+  color: var(--item-hover-text-color);
+}
+
+.md-toc-h2 .md-toc-inner,
+.md-toc-h3 .md-toc-inner,
+.md-toc-h4 .md-toc-inner,
+.md-toc-h5 .md-toc-inner,
+.md-toc-h6 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  padding-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  padding-left: 3em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  padding-left: 5em;
+}
+
+.md-toc-h5,
+.md-toc-h6 {
+  display: none;
+}
+
+.md-toc-h3:before,
+.md-toc-h4:before {
+  content: "";
+  position: absolute;
+  background: repeating-linear-gradient(90deg, var(--color-black), var(--color-black) 1px, transparent 1px, transparent 3em);
+  width: 1em;
+  height: calc(100% + 2px);
+  top: -1px;
+  left: 1.5rem;
+}
+.md-toc-h4:before { width: 4em; }
+
+.md-toc-inner:before {
+  content: "\2022";
+  display: inline-block;
+  font-size: .75rem;
+  color: var(--color-bright-black);
+  text-align: right;
+  margin-right: 1em;
+}
+
+.md-toc { counter-reset: toc-h1; }
+.md-toc-h1 { counter-increment: toc-h1; counter-reset: toc-h2; }
+.md-toc-h2 { counter-increment: toc-h2; counter-reset: toc-h3; }
+.md-toc-h3 { counter-increment: toc-h3; counter-reset: toc-h4; }
+.md-toc-h4 { counter-increment: toc-h4; counter-reset: toc-h5; }
+.md-toc-h5 { counter-increment: toc-h5; counter-reset: toc-h6; }
+.md-toc-h6 { counter-increment: toc-h6; }
+
+.md-toc-h1 > .md-toc-inner:before {
+  content: "";
+}
+
+.md-toc-h2 > .md-toc-inner:before {
+  content: counter(toc-h2);
+  width: 1em;
+}
+
+.md-toc-h3 > .md-toc-inner:before {
+  content: counter(toc-h2) "." counter(toc-h3);
+  width: 2em;
+}
+
+.md-toc-h4 > .md-toc-inner:before {
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
+  width: 3em;
+}
+
+
+/* Lists */
+
+#write ul {
+  list-style: none;
+}
+
+#write ol {
+  text-indent: 0;
+}
+
+#write ul li {
+  padding-left: .5rem;
+}
+
+#write ul > li:not(.task-list-item) > p:first-child:before {
+  content: "\2022";
+  color: var(--color-bright-black);
+  position: absolute;
+  left: -1.45rem;
+}
+
+#write ul ul:before, #write ul ol:before, #write ol ul:before, #write ol ol:before {
+  content: "";
+  position: absolute;
+  border-right: 1px solid var(--color-black);
+  height: 100%;
+  margin-left: -1.25rem;
+  left: 0;
+}
+
+
+/* Footnotes */
+sup.md-footnote {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0;
+}
+
+.footnotes {
+  font-size: .8em;
+}
+
+.md-def-name {
+  padding: 0 !important;
+}
+
+.md-def-name:before,
+.md-def-name:after {
+  color: var(--md-char-color);
+  position: static;
+}
+
+.md-def-name:after {
+  content: "]:";
+}
+
+
+/* Enable dark mode for images */
+img[alt*="dark"] {
+  filter: invert() hue-rotate(180deg);
+}
+
+
+/* Inline formatting */
+
+del {
+  color: var(--color-white);
+  text-decoration-color: var(--text-color);
+}
+
+ins {
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-green);
+}
+
+code {
+  font-size: .85rem;
+  font-weight: normal;
+}
+
+span[md-inline="code"] code:before,
+span[md-inline="code"] code:after {
+  content: "";
+  display: inline-block;
+  width: .525ch;
+}
+
+span[md-inline="code"].md-expand code:before,
+span[md-inline="code"].md-expand code:after {
+  display: none;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+  border-bottom: 2px solid var(--color-yellow);
+}
+
+kbd {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: var(--color-bright-black);
+  box-shadow: none;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:before {
+  content: "+";
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+  text-align: center;
+  color: var(--md-char-color);
+  border: 1px solid var(--color-black);
+  border-radius: 3px;
+  margin-top: -4px;
+  margin-right: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  transition: background-color .2s, color .2s;
+}
+
+details[open] summary:before {
+  content: "\2212";
+}
+
+summary:hover:before {
+  background-color: var(--item-hover-bg-color);
+  color: var(--item-hover-text-color);
+}
+
+
+/* Full-width elements */
+
+:root {
+  --aspect-ratio: 16/9;
+  --full-width: undefined;
+  --content-width: 100vw - 2*(var(--scrollbar-width)) - 2*(var(--side-margin));
+  --max-height: 100vh - 30px - 2*(var(--side-margin));
+}
+
+/* figure is used for tables */
+figure,
+div[role="wrapper"],
+p > .md-image:only-child,
+.md-diagram-panel {
+  margin-left: calc(50% - ((var(--content-width)) / 2)) !important;
+  margin-right: calc(50% - ((var(--content-width)) / 2)) !important;
+  max-width: calc(var(--content-width));
+}
+
+@media (min-width: 769px) {
+  .pin-outline figure,
+  .pin-outline div[role="wrapper"],
+  .pin-outline p > .md-image:only-child,
+  .pin-outline .md-diagram-panel {
+    --content-width: 100vw - 2*(var(--scrollbar-width)) - 2*(var(--side-margin)) - (var(--sidebar-width));
+  }
+}
+
+figure {
+  padding-top: 31px;
+  margin-top: calc(1.2em - 31px);
+}
+
+.ty-table-edit {
+  max-width: 80ch;
+  margin-left: calc(((var(--content-width)) / 2));
+  transform: translateX(-50%);
+}
+
+/* mermaid diagram */
+.md-diagram-panel {
+  width: calc(var(--content-width)) !important;
+  left: unset !important;
+  right: unset !important;
+  max-width: unset !important;
+}
+
+.md-diagram-panel-preview {
+  margin: 0 auto;
+}
+
+/* iframe/video gets surrounded på this */
+div[role="wrapper"] {
+  --wrapper-width: ((var(--content-width)) - 100%) * var(--full-width) + 100%;
+  --wrapper-height: (var(--content-width))/(var(--aspect-ratio)) * var(--full-width);
+  --max-width: (var(--max-height)) * (var(--aspect-ratio));
+  position: relative;
+  width: calc(var(--wrapper-width));
+  height: calc(var(--wrapper-height));
+  max-height: calc(var(--max-height));
+  text-align: center;
+}
+
+div[role="wrapper"] > iframe, div[role="wrapper"] > video {
+  max-height: calc(var(--max-height));
+}
+
+div[role="wrapper"] > iframe {
+  width: 100%;
+  height: 100%;
+  max-width: calc(var(--max-width));
+}
+
+
+/* Image block */
+p > .md-image:only-child {
+  width: calc(var(--content-width));
+}
+
+figure > img,
+p > .md-image:only-child img {
+  display: block;
+  margin: 0 auto;
+/*   max-height: calc(var(--max-height)); */
+}
+
+
+/* Captions */
+
+#write {
+  counter-reset: tables figures;
+}
+
+.md-table-fig,
+#write :not(.md-table-fig) > table {
+  counter-increment: tables;
+}
+
+#write p > .md-image:only-child img,
+#write figure > img {
+  counter-increment: figures;
+}
+
+figure > figcaption,
+table > caption {
+  text-align: center;
+  margin: 1.2rem 0;
+  font-size: .8em;
+}
+
+figure > figcaption {
+  margin-bottom: 0;
+}
+
+table > caption {
+  margin-top: 0;
+}
+
+figure > img + figcaption:before {
+  content: "Figure\00a0" counter(figures) ": ";
+  font-weight: bold;
+}
+
+#write figure > table + figcaption:before,
+#write table > caption:before {
+  content: "Table\00a0" counter(tables) ": ";
+  font-weight: bold;
+}

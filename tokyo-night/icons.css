@@ -1,0 +1,771 @@
+.context-menu {
+  margin-left: -3px;
+  margin-top: 25px;
+}
+
+.context-menu:not(#context-menu) {
+  width: 188px;
+}
+
+.context-menu li:not(.has-btn-submenu) > a {
+  padding: 0;
+  padding-left: 42px !important;
+  padding-right: 24px;
+  line-height: 32px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.menu-item-container {
+  text-align: center;
+}
+
+.menu-item-container a.menu-style-btn {
+  line-height: 32px;
+  position: relative;
+  transition: background-color .2s;
+  margin: 0 -2px;
+}
+
+.menu-item-container a.menu-style-btn-2width {
+  width: 50% !important;
+  padding: 0 1.5px;
+}
+
+.has-btn-submenu .menu-style-btn .fa:before,
+.context-menu a:not(.menu-style-btn):before {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.has-btn-submenu .menu-style-btn .fa:before {
+  margin-top: 4px;
+  margin-bottom: -4px;
+}
+
+.context-menu a:not(.menu-style-btn):before {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+/* Selected item */
+.context-menu a.state-on {
+  background-color: var(--bg-color-darker);
+}
+.context-menu a.state-on:after {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/73daca/checkmark.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  position: absolute;
+  right: 14px;
+  top: 10px;
+}
+
+.context-menu .menu-style-btn:after {
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(var(--color-darken), .85);
+  color: var(--text-color);
+  border-radius: 2px;
+  padding: 5px 8px;
+  line-height: 14px;
+  filter: drop-shadow(0 1px 2px hsla(0, 0%, 0%, .3));
+  transition: visibility 0s .1s,opacity 150ms cubic-bezier(0,0,.2,1);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.context-menu a.menu-style-btn:after {
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.context-menu a.menu-style-btn:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.context-menu .fa-caret-right {
+  position: absolute;
+  right: 10px;
+  line-height: 32px;
+  color: var(--color-white);
+}
+
+.context-menu .fa-caret-right:before {
+  content: "\f105";
+  font-size: 20px;
+}
+
+
+/* Edit */
+
+li[data-key="edit"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/edit.png);
+}
+
+li[data-key="cut"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/cut.png);
+}
+
+
+li[data-key="copy"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/copy.png);
+}
+
+li[data-key="copy-img"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/image.png);
+}
+
+li[data-key="paste"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/paste.png);
+}
+
+li[data-key="copy_as_markdown"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/markdown.png);
+}
+
+li[data-key="paste_as_plain"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/paste-as-text.png);
+}
+
+li[data-key="block-style"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/paragraph.png);
+}
+
+li[data-key="table"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/table-1.png);
+}
+
+li[data-key="insert"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/plus-math.png);
+}
+
+li[data-key="delete-block"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/bb616b/trash.png);
+}
+
+li[data-key="dev-tool"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/detective.png);
+}
+
+
+/* Inline style menu */
+
+a[data-style="strong"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/bold.png);
+}
+a[data-style="strong"]:after { content: "Strong emphasis"; }
+
+a[data-style="em"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/italic.png);
+}
+a[data-style="em"]:after { content: "Emphasis"; }
+
+a[data-style="code"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/source-code.png);
+}
+a[data-style="code"]:after { content: "Code"; }
+
+a[data-style="link"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/link.png);
+}
+a[data-style="link"]:after { content: "Link"; }
+
+
+/* Indent style menu */
+
+a[data-indent="blockquote"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/term.png);
+}
+a[data-indent="blockquote"]:after { content: "Quote"; }
+
+a[data-indent="ol"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/numbered-list.png);
+}
+a[data-indent="ol"]:after { content: "Numbered list"; }
+
+a[data-indent="ul"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/list.png);
+}
+a[data-indent="ul"]:after { content: "Bulleted list"; }
+
+a[data-indent="tasklist"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/to-do.png);
+}
+a[data-indent="tasklist"]:after { content: "Checklist"; }
+
+a[data-tab="left"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/outdent.png);
+  transform: scaleX(-1);
+}
+a[data-tab="left"]:after { content: "Outdent"; }
+
+a[data-tab="right"] .fa:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/indent.png);
+  transform: scaleX(-1);
+}
+a[data-tab="right"]:after { content: "Indent"; }
+
+
+/* Block style menu */
+
+#block-style-menu a[data-block="header1"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/header-1.png);
+}
+
+#block-style-menu a[data-block="header2"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/header-2.png);
+}
+
+#block-style-menu a[data-block="header3"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/header-3.png);
+}
+
+#block-style-menu a[data-block="paragraph"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/paragraph.png);
+}
+
+
+/* Insert menu */
+
+#insert-menu a[data-style="image"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/image.png);
+}
+
+#insert-menu a[data-insert="def_footnote"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/superscript.png);
+}
+
+#insert-menu a[data-insert="def_link"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/link.png);
+}
+
+#insert-menu a[data-insert="hr"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/horizontal-line.png);
+}
+
+#insert-menu a[data-insert="table"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/table-1.png);
+}
+
+#insert-menu a[data-insert="fences"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/code.png);
+}
+
+#insert-menu a[data-insert="math_block"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/insert-equation.png);
+}
+
+#insert-menu a[data-insert="toc"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/overview-pages-4.png);
+}
+
+#insert-menu a[data-insert="meta_block"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/information.png);
+}
+
+#insert-menu a[data-insert-p="before"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/sort-up.png);
+}
+
+#insert-menu a[data-insert-p="after"]:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/sort-down.png);
+}
+
+
+/* Table menu */
+
+li[data-key="insert_row_before"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/insert-row-above.png);
+}
+
+li[data-key="insert_row_after"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/insert-row-below.png);
+}
+
+li[data-key="insert_col_before"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/insert-column-left.png);
+}
+
+li[data-key="insert_col_after"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/insert-column-right.png);
+}
+
+li[data-key="delete_table_row"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/delete-row.png);
+}
+
+li[data-key="delete_table_col"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/delete-column.png);
+}
+
+li[data-key="copy_table"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/copy.png);
+}
+
+li[data-key="reformat_table"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/fantasy.png);
+}
+
+li[data-key="delete_table"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/bb616b/trash.png);
+}
+
+
+/* Image menu */
+
+li[data-key="reveal-img-in-finder"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/opened-folder.png);
+}
+
+li[data-key="reveal-img-in-browser"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/internet.png);
+}
+
+li[data-key="move-img-to-target"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/downloading-updates.png);
+}
+
+li[data-key="select-img-target"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/send-file.png);
+}
+
+li[data-key="upload-img"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/upload-to-cloud.png);
+}
+
+li[data-key="zoom-img"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/zoom-mode.png);
+}
+
+
+/* Zoom image menu */
+
+#zoom-img-menu li[data-factor="100%"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/zoom-to-actual-size.png);
+}
+
+#zoom-img-menu li[data-factor="200%"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/zoom-in-2x.png);
+}
+
+
+/* Hyperlink */
+
+li[data-key="jumpto"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/internet.png);
+}
+
+
+/* Spellcheck */
+
+li[data-key="learn"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/plus.png);
+}
+
+li[data-key="unlearn"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/minus.png);
+}
+
+
+/* Online search */
+
+li[data-key="search-default"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/internet.png);
+}
+
+
+/* Video */
+
+li[data-key="play"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/play.png);
+}
+
+li[data-key="pause"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/pause.png);
+}
+
+
+/* File menu */
+
+li[data-action="open"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/document.png);
+}
+
+li[data-action="open_in_new_window"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/new-window.png);
+}
+
+li[data-action="undo_file_op"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/undo.png);
+}
+
+li[data-action="new_file"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/add-document.png);
+}
+
+li[data-action="new_folder"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/add-folder.png);
+}
+
+li[data-action="search"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/search.png);
+}
+
+li[data-action="list_view"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/tiles.png);
+}
+
+li[data-action="tree_view"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/tree-structure.png);
+}
+
+li[data-action="duplicate"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/duplicate.png);
+}
+
+li[data-action="rename"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/rename.png);
+}
+
+li[data-action="delete"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/bb616b/trash.png);
+}
+
+li[data-action="copy_path"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/copy-link.png);
+}
+
+li[data-action="reveal"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/opened-folder.png);
+}
+
+li[data-action="expand_all"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/expand-arrow.png);
+}
+
+li[data-action="collapse_all"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/collapse-arrow.png);
+}
+
+
+/* Outline menu */
+
+li[data-action="highlight"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/eye.png);
+}
+
+li[data-action="filter"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/filter.png);
+}
+
+li[data-action="expand-all"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/enlarge.png);
+}
+
+li[data-action="collapse-all"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/compress.png);
+}
+
+li[data-action="collapsible-outline"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/check-all.png);
+}
+
+li[data-action="flat-outline"] a:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/enlarge.png),
+    url(icons/fluent-systems-regular/1x/a9b1d6/lock.png);
+  background-size: 100%, 50% !important;
+  background-position: 0 0, 100% 100%;
+}
+
+
+/* footer */
+
+footer #toggle-typewriter-mode-btn {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/typewriter-with-paper.png);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: center;
+}
+
+.ty-on-typewriter-mode #toggle-typewriter-mode-btn {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/typewriter-with-paper.png);
+}
+
+footer .ty-md-radio-button-off:before,
+footer .ty-md-radio-button-on:before,
+.ion-chevron-left:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/open-pane.png);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: center;
+  transform: scaleX(-1);
+}
+
+.ion-chevron-left:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/close-pane.png);
+}
+
+
+/* Mega menu */
+
+.megamenu-menu-list li a i {
+  display: initial;
+}
+
+.megamenu-menu-list .saved #m-saved {
+  display: flex;
+}
+
+.megamenu-menu-list #m-saved .fa {
+  line-height: 1;
+}
+
+.megamenu-menu-list .saved #m-saved:after {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/73daca/checkmark.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  right: 16px;
+}
+
+@media (max-width: 768px) {
+  .megamenu-menu-list .saved #m-saved:after {
+    bottom: 4px;
+    right: 12px;
+  }
+}
+
+.megamenu-menu .fa:before {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.megamenu-menu #m-new i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/file.png);
+}
+
+.megamenu-menu #m-open i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/opened-folder.png);
+}
+.megamenu-menu #m-open.active i:before {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/opened-folder.png);
+}
+
+.megamenu-menu #m-save i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/save.png);
+}
+
+.megamenu-menu #m-saved i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/save.png);
+}
+
+.megamenu-menu #m-save-as i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/save-as.png);
+}
+
+.megamenu-menu #m-export i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/export.png);
+}
+.megamenu-menu #m-export.active i:before {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/export.png);
+}
+
+.megamenu-menu #m-print i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/print.png);
+}
+
+.megamenu-menu #m-theme i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/paint-palette.png);
+}
+.megamenu-menu #m-theme.active i:before {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/paint-palette.png);
+}
+
+.megamenu-menu #m-preference i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/settings.png);
+}
+
+.megamenu-menu #m-about i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/help.png);
+}
+.megamenu-menu #m-about.active i:before {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/help.png);
+}
+
+.megamenu-menu #m-close i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/close-window.png);
+}
+
+
+/* Mega menu - Open buttons */
+
+#m-open-local,
+#m-import-local,
+#open-theme-folder-btn {
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  padding-left: 52px;
+}
+
+#m-open-local i,
+#m-import-local i {
+  display: none;
+}
+
+#m-open-local,
+#open-theme-folder-btn {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/opened-folder.png);
+}
+
+#m-import-local {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/import.png);
+}
+
+
+/* Mega menu - Export */
+
+.do-export-button i:before {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-top: -4px;
+}
+
+.do-export-button[data-key="html"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/html-filetype.png);
+}
+
+.do-export-button[data-key="html-plain"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/clear-formatting.png);
+}
+
+.do-export-button[data-key="pdf"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/pdf.png);
+}
+
+.do-export-button[data-key="docx"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/word.png);
+}
+
+.do-export-button[data-key="odt"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/document.png);
+}
+
+.do-export-button[data-key="rtf"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/document.png);
+}
+
+.do-export-button[data-key="epub"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/epub.png);
+}
+
+.do-export-button[data-key="latex"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/code-file.png);
+}
+
+.do-export-button[data-key="wiki"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/document.png);
+}
+
+.do-export-button[data-key="rst"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/document.png);
+}
+
+.do-export-button[data-key="textile"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/document.png);
+}
+
+.do-export-button[data-key="opml"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/code-file.png);
+}
+
+.do-export-button[data-key="latex"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/code-file.png);
+}
+
+.do-export-button[data-key="image"] i:before {
+  content: "";
+  background-image: url(icons/fluent-systems-regular/2x/a9b1d6/image.png);
+}
+
+
+/* Sidebar */
+
+.file-node-icon:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-left: -2px;
+}
+
+.file-node-content > .file-node-icon.fa-folder:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/folder.png);
+}
+
+.file-node-expanded > .file-node-content > .file-node-icon.fa-folder:before {
+  background-image: url(icons/fluent-systems-regular/1x/a9b1d6/opened-folder.png);
+}
+
+.file-node-icon.fa-file-text-o:before {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/document.png);
+}
+
+.file-library-file-node[data-path$=".md"] .file-node-icon.fa-file-text-o:before {
+  background-image: url(icons/fluent-systems-regular/1x/73daca/markdown.png);
+}

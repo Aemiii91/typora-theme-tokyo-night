@@ -1,0 +1,146 @@
+/* Codemirror */
+
+.CodeMirror pre {
+  /* font-family: var(--monospace); */
+}
+
+.CodeMirror-lines {
+  padding-left: 4px;
+}
+
+.CodeMirror-code > div:only-child .CodeMirror-linenumber {
+  display: none;
+}
+
+/* selected text and cursor */
+.CodeMirror-selected,
+.CodeMirror-selectedtext {
+  background: var(--select-text-bg-color) !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 2px solid var(--text-color);
+  z-index: 3;
+}
+
+/* Tabs */
+.cm-tab:after {
+  filter: invert();
+}
+
+/* highlight */
+.cm-s-inner .cm-property {
+  color: var(--color-bright-blue) !important;
+}
+
+.cm-s-inner .cm-operator {
+  color: var(--color-bright-cyan) !important;
+}
+
+.cm-s-inner .cm-keyword {
+  color: var(--color-bright-purple) !important;
+}
+
+.cm-s-inner .cm-tag {
+  color: var(--color-green) !important;
+}
+
+.cm-s-inner .cm-attribute {
+  color: var(--color-yellow) !important;
+}
+
+.cm-s-inner .cm-string {
+  color: var(--color-bright-yellow) !important;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+  color: var(--color-bright-black) !important;
+  font-style: italic;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+  color: var(--color-bright-yellow) !important;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+  color: var(--color-bright-yellow) !important;
+}
+
+.cm-s-inner .cm-builtin {
+  color: var(--color-bright-red) !important;
+}
+
+.cm-s-inner .cm-bracket {
+  color: var(--color-cyan) !important;
+}
+
+.cm-s-inner .cm-number {
+  color: var(--color-bright-green) !important;
+}
+
+.cm-s-inner .cm-variable {
+  color: var(--text-color) !important;
+}
+
+.cm-s-inner .cm-variable-2 {
+  color: var(--color-yellow) !important;
+}
+
+.md-focus .cm-s-inner .CodeMirror-activeline-background {
+  background: var(--select-text-bg-color);
+}
+
+.cm-formatting-task .cm-formatting-task {
+  color: var(--color-bright-red);
+}
+
+/* math formula tag */
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+  color: var(--color-yellow);
+}
+
+/* horizontal divider when language is markdown */
+.cm-s-inner .cm-hr {
+  color: var(--color-black);
+}
+
+/* variable type when language is c/cpp */
+.cm-s-inner .cm-variable-3 {
+  color: var(--color-bright-purple);
+}
+
+/* unknown highlight keyword */
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+  color: var(--color-bright-yellow);
+}
+
+.cm-s-inner .cm-link {
+  color: var(--color-bright-blue);
+}
+
+.cm-s-inner .cm-negative {
+  color: var(--color-bright-red);
+}
+
+.cm-s-inner .cm-positive {
+  color: var(--color-bright-green);
+}
+
+.cm-s-inner .cm-string-2 {
+  color: var(--color-bright-yellow);
+}
+
+.CodeMirror-gutters {
+  border-right: none;
+}
+
+.CodeMirror-linenumber {
+  color: var(--color-white);
+}
