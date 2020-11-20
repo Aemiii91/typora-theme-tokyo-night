@@ -1,0 +1,78 @@
+
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+  border-left: 2px solid var(--text-color);
+}
+
+.cm-s-typora-default .cm-header {
+  color: var(--color-bright-yellow) !important;
+}
+
+.cm-s-typora-default .cm-property {
+  color: var(--color-bright-blue) !important;
+}
+
+.cm-s-typora-default .cm-string {
+  color: var(--color-bright-purple);
+}
+
+.cm-s-typora-default .cm-atom {
+  color: var(--color-bright-green);
+}
+
+.cm-s-typora-default .cm-number {
+  color: var(--color-bright-green);
+  font-style: normal !important;
+}
+
+.cm-s-typora-default .cm-link {
+  color: var(--color-bright-blue);
+}
+
+.cm-s-typora-default .cm-tag.cm-bracket {
+  color: var(--color-cyan) !important;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background: var(--select-text-bg-color);
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+  color: var(--color-bright-purple);
+}
+
+.cm-s-typora-default .cm-tag {
+  color: var(--color-green);
+}
+
+.cm-s-typora-default .cm-strong {
+  color: var(--color-bright-red);
+}
+
+.cm-s-typora-default .cm-em {
+  color: var(--color-yellow);
+}
+
+.cm-s-typora-default .cm-del {
+  color: var(--color-red);
+}
+
+.cm-s-typora-default .cm-block-start.cm-variable-2,
+.cm-s-typora-default .cm-block-start.cm-atom {
+  color: var(--color-green);
+}
+
+/* inline code in source mode */
+.cm-s-typora-default .cm-comment {
+  color: var(--color-bright-green);
+}
+
+.cm-s-typora-default .cm-hr {
+  color: var(--color-bright-black);
+  font-family: var(--monospace);
+}
+
+.cm-s-typora-default .cm-table-row {
+  color: var(--color-green);
+}

@@ -1,0 +1,108 @@
+#write h1, body > h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  color: var(--color-bright-yellow);
+}
+
+strong {
+  color: var(--color-bright-red);
+}
+
+em {
+  color: var(--color-yellow);
+}
+
+del {
+  color: var(--color-white);
+  text-decoration-color: var(--color-red);
+}
+
+code {
+  color: var(--color-bright-green);
+}
+
+kbd {
+  color: var(--color-bright-cyan);
+}
+
+blockquote {
+  border-left: 4px solid var(--color-green);
+}
+
+sup.md-footnote {
+  color: var(--color-bright-blue);
+}
+
+.md-def-name {
+  color: var(--color-bright-blue);
+  font-weight: normal;
+  font-family: var(--monospace);
+}
+
+
+/* Table */
+
+#write table, #write table thead {
+  border-color: var(--color-green);
+}
+
+#write th {
+  color: var(--color-green);
+}
+
+#write td {
+  color: var(--color-bright-green);
+}
+
+
+/* Image meta */
+.md-image > .md-meta {
+  color: var(--color-bright-cyan);
+}
+
+/* Math */
+
+.md-math-container,
+.md-inline-math,
+.md-mathjax-preview {
+  color: var(--color-bright-purple);
+}
+
+
+/* Lists */
+
+.md-toc-inner::before,
+#write ul > li > h1:first-child:before,
+#write ul > li > h2:first-child:before,
+#write ul > li > h3:first-child:before,
+#write ul > li > h4:first-child:before,
+#write ul > li > h5:first-child:before,
+#write ul > li > h6:first-child:before,
+#write ul > li:not(.task-list-item) > p:first-child:before,
+#write ol > li,
+body > ol > li {
+  color: var(--color-green);
+}
+
+#write ol > li > *,
+body > ol > li > * {
+  color: var(--text-color);
+}
+
+
+input[type="checkbox"]:checked:before, input[type="radio"]:checked:before {
+  color: var(--color-bright-green);
+  border-color: var(--color-green);
+}
+
+
+summary {
+  color: var(--color-bright-green);
+}
+
+summary:before {
+  color: var(--color-green);
+}
