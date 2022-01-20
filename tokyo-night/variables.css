@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 :root {
   --color-level: 4;
 
@@ -20,7 +22,7 @@
   --color-bright-cyan:    #7dcfff;
   --color-bright-white:   #bec2da;
 
-  --font-family: Charter, Times, serif;
+  --font-family: 'Fira Sans', sans-serif;
   --monospace: "Fira Code", Consolas, "Lucida Console", "Courier", monospace;
   --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 

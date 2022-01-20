@@ -132,7 +132,7 @@
 
 /* Hide top folder */
 #file-library-tree > .file-library-node:first-child > .file-node-content {
-  display: none;
+  /* display: none; */
 }
 
 
@@ -206,6 +206,11 @@ body:not(.no-collapse-outline) #typora-sidebar #sidebar-content #outline-content
 
 .outline-item:hover {
   background-color: rgba(var(--color-darken), .25);
+}
+
+/* Exclude H6 headings from outline */
+.outline-h6 {
+  display: none;
 }
 
 #typora-sidebar-resizer.dragging .typora-sidebar-resizer-bar {

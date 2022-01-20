@@ -1,9 +1,10 @@
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body, #write, .cm-s-typora-default {
   font-family: var(--font-family);
+  font-weight: 300;
   line-height: 1.6;
 }
 
@@ -62,6 +63,51 @@ span[md-inline="strong"] .md-meta:last-of-type {
   position: relative;
 }
 
+#write h1 { margin-top: 4em; }
+#write h2 { margin-top: 3em; }
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  margin-top: 2em;
+}
+
+#write .md-hr + h1,
+#write .md-hr + h2,
+#write .md-hr + h3,
+#write .md-hr + h4,
+#write .md-hr + h5,
+#write .md-hr + h6 {
+  margin-top: 0;
+}
+
+#write h1 { font-size: 2rem; }
+#write h2 { font-size: 1.7rem; }
+#write h3 { font-size: 1.4rem; }
+#write h4 { font-size: 1.2rem; }
+#write h5 { font-size: 1.1rem; }
+#write h6 { font-size: 1rem; }
+
+#write h1:first-child,
+#write h2:first-child,
+#write h3:first-child,
+#write h4:first-child,
+#write h5:first-child,
+#write h6:first-child,
+#write h1 + h2,
+#write h2 + h3,
+#write h3 + h4,
+#write h4 + h5,
+#write h5 + h6 {
+  margin-top: 0;
+}
+
+#write p:first-child + h1,
+#write .md-meta-block + h1 {
+  margin-top: 2rem;
+}
+
+
 /** initialize css counter */
 #write { counter-reset: h1; }
 h1 { counter-increment: h1; counter-reset: h2; }
@@ -77,29 +123,30 @@ h6 { counter-increment: h6; }
 } */
 
 #write h2:before {
-    content: counter(h2) "\00a0\00a0";
+  content: counter(h2) "\00a0\00a0";
 }
 
 #write h3:before,
 h3.md-focus.md-heading:before /** override the default style for focused headings */ {
-    content: counter(h2) "." counter(h3) "\00a0\00a0";
+  content: counter(h2) "." counter(h3) "\00a0\00a0";
 }
 
 #write h4:before,
 h4.md-focus.md-heading:before {
-    content: counter(h2) "." counter(h3) "." counter(h4) "\00a0\00a0";
+  content: counter(h2) "." counter(h3) "." counter(h4) "\00a0\00a0";
 }
 
 #write h5:before,
 h5.md-focus.md-heading:before {
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "\00a0\00a0";
-    display: none;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "\00a0\00a0";
+  display: none;
 }
 
 #write h6:before,
 h6.md-focus.md-heading:before {
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) "\00a0\00a0";
-    display: none;
+/*     content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) "\00a0\00a0"; */
+  content: "H6\00a0\00a0";
+  display: none;
 }
 
 /** override the default style for focused headings */
@@ -183,6 +230,7 @@ hr {
   height: 2px;
   background-color: var(--color-black);
   border: 0px;
+  margin: 4rem 0;
 }
 
 ul,
@@ -230,13 +278,9 @@ table tr td {
   padding: 6px 13px;
 }
 
-.md-math-container, .md-mathjax-preview {
-  font-size: 1.35rem;
-}
-
 .md-inline-math {
-  font-size: 1.1rem;
-  line-height: 1rem;
+  font-size: 1.1em;
+  line-height: 1em;
 }
 
 .md-inline-math script {
@@ -347,17 +391,17 @@ table tr td {
 
 .md-toc-h2 > .md-toc-inner:before {
   content: counter(toc-h2);
-  width: 1em;
+  width: 1.2em;
 }
 
 .md-toc-h3 > .md-toc-inner:before {
   content: counter(toc-h2) "." counter(toc-h3);
-  width: 2em;
+  width: 2.4em;
 }
 
 .md-toc-h4 > .md-toc-inner:before {
   content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
-  width: 3em;
+  width: 3.6em;
 }
 
 
@@ -421,6 +465,7 @@ sup.md-footnote {
 /* Enable dark mode for images */
 img[alt*="dark"] {
   filter: invert() hue-rotate(180deg);
+  mix-blend-mode: screen;
 }
 
 
@@ -437,7 +482,7 @@ ins {
 }
 
 code {
-  font-size: .85rem;
+  font-size: .85em;
   font-weight: normal;
 }
 
@@ -519,6 +564,7 @@ p > .md-image:only-child,
   margin-left: calc(50% - ((var(--content-width)) / 2)) !important;
   margin-right: calc(50% - ((var(--content-width)) / 2)) !important;
   max-width: calc(var(--content-width));
+  background-color: var(--bg-color);
 }
 
 @media (min-width: 769px) {
@@ -532,7 +578,7 @@ p > .md-image:only-child,
 
 figure {
   padding-top: 31px;
-  margin-top: calc(1.2em - 31px);
+  margin-top: -31px;
 }
 
 .ty-table-edit {

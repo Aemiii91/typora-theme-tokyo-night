@@ -1,5 +1,10 @@
-html, .ty-preferences, .typora-node, .unibody-window {
-    font-family: var(--system-font);
+html, .ty-preferences, .typora-node, .unibody-window,
+button, input, select, textarea {
+  font-family: var(--system-font);
+}
+
+#top-titlebar #w-close:hover {
+  background-color: #D53626;
 }
 
 .modal a,

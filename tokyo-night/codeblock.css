@@ -1,7 +1,7 @@
 /* Codemirror */
 
-.CodeMirror pre {
-  /* font-family: var(--monospace); */
+.CodeMirror pre, #write pre {
+  font-family: var(--monospace);
 }
 
 .CodeMirror-lines {

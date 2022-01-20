@@ -4,7 +4,7 @@
 #write h4,
 #write h5,
 #write h6 {
-  color: var(--color-bright-yellow);
+  color: var(--color-green);
 }
 
 strong {
@@ -20,7 +20,7 @@ del {
   text-decoration-color: var(--color-red);
 }
 
-code {
+code, #write [mdtype="html_block"] pre {
   color: var(--color-bright-green);
 }
 
