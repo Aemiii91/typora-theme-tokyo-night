@@ -412,10 +412,10 @@ table tr td {
 }
 
 #write ol {
-  text-indent: 0;
+  text-indent: 0.5rem;
 }
 
-#write ul li {
+#write ul li, #write ol li {
   padding-left: .5rem;
 }
 
@@ -424,6 +424,8 @@ table tr td {
   color: var(--color-bright-black);
   position: absolute;
   left: -1.45rem;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
 }
 
 #write ul ul:before, #write ul ol:before, #write ol ul:before, #write ol ol:before {
@@ -462,10 +464,11 @@ sup.md-footnote {
 }
 
 
-/* Enable dark mode for images */
-img[alt*="dark"] {
+/* Enable dark mode for images and diagrams */
+img[alt*="dark"], .md-diagram-panel-preview {
   filter: invert() hue-rotate(180deg);
   mix-blend-mode: screen;
+  color: initial;
 }
 
 

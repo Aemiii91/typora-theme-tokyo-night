@@ -2,13 +2,7 @@
 
 A theme for [Typora](https://typora.io/), using icons from [Icons8](https://icons8.com).
 
----
-
-![lorem-ipsum](images/lorem-ipsum.png)
-
----
-
-![lorem-ipsum+](images/lorem-ipsum+.png)
+![demo](images/new-font-full-color.png)
 
 The TokyoNight+ variant has more colors, kinda' like syntax highlighting for your notes.
 

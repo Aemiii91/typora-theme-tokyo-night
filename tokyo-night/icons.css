@@ -680,7 +680,8 @@ footer .ty-md-radio-button-on:before,
   background-image: url(icons/fluent-systems-regular/2x/a9b1d6/clear-formatting.png);
 }
 
-.do-export-button[data-key="pdf"] i:before {
+.do-export-button[data-key="pdf"] i:before,
+.do-export-button[data-key="latex-pdf"] i:before {
   content: "";
   background-image: url(icons/fluent-systems-regular/2x/a9b1d6/pdf.png);
 }

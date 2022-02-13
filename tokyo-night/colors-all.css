@@ -7,7 +7,7 @@
   color: var(--color-green);
 }
 
-strong {
+strong, strong .md-inline-math {
   color: var(--color-bright-red);
 }
 
