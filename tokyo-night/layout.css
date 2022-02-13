@@ -411,10 +411,6 @@ table tr td {
   list-style: none;
 }
 
-#write ol {
-  text-indent: 0.5rem;
-}
-
 #write ul li, #write ol li {
   padding-left: .5rem;
 }
